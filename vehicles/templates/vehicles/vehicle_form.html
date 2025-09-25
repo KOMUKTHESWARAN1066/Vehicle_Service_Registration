@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Registration Form</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #000428, #004e92);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container,
+        .success-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        label,
+        p {
+            color: white;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Vehicle Registration</h2>
+        <form method="post" action="{% url 'vehicles:vehicle_create' %}">
+            {% csrf_token %}
+            <label for="vehicle_make">Vehicle Make</label>
+            <input type="text" id="vehicle_make" name="vehicle_make" required>
+
+            <label for="vehicle_model">Vehicle Model</label>
+            <input type="text" id="vehicle_model" name="vehicle_model" required>
+
+            <label for="vehicle_year">Vehicle Year</label>
+            <input type="number" id="vehicle_year" name="vehicle_year" required>
+
+            <label for="vehicle_color">Vehicle Color</label>
+            <input type="text" id="vehicle_color" name="vehicle_color" required>
+
+            <button type="submit">Register Vehicle</button>
+        </form>
+        <a href="{% url 'customers:list_customers' %}">Next: Customer Management</a>
+    </div>
+</body>
+
+</html>

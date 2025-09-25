@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Customer Registration Form</h2>
+        <form method="post" action="{% url 'customers:register_customer' %}">
+            {% csrf_token %}
+            <label for="customer_name">Customer Name</label>
+            <input type="text" id="customer_name" name="customer_name" required>
+
+            <label for="customer_address">Customer Address</label>
+            <input type="text" id="customer_address" name="customer_address" required>
+
+            <label for="mobile_no">Mobile Number</label>
+            <input type="text" id="mobile_no" name="mobile_no" required>
+
+            <label for="alt_contact_no">Alternate Number</label>
+            <input type="text" id="alt_contact_no" name="alt_contact_no">
+
+            <button type="submit">Register Customer</button>
+        </form>
+        <a href="{% url 'vehicles:vehicle_create' %}">Next: Vehicle Service Registration</a>
+
+    </div>
+</body>
+
+</html>

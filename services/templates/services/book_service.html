@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Service</title>
+</head>
+
+<body>
+    <h1>Book Service</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="vehicle_id">Vehicle ID</label>
+        <input type="text" id="vehicle_id" name="vehicle_id" required>
+
+        <label for="service_type">Service Type</label>
+        <select id="service_type" name="service_type" required>
+            <option value="">Select Service Type</option>
+            <option value="general">General Service</option>
+            <option value="oil_change">Oil Change</option>
+            <option value="repair">Repair</option>
+        </select>
+
+        <label for="service_package">Service Package</label>
+        <select id="service_package" name="service_package" required>
+            <option value="">Select Package</option>
+            <option value="basic">Basic Package</option>
+            <option value="standard">Standard Package</option>
+            <option value="premium">Premium Package</option>
+        </select>
+
+        <label for="additional_requirements">Additional Requirements</label>
+        <textarea id="additional_requirements" name="additional_requirements"></textarea>
+
+        <button type="submit">Submit</button>
+        <button type="submit">Book</button>
+    </form>
+    <a href="{% url 'manage_services' %}">Manage Services</a>
+</body>
+
+</html>

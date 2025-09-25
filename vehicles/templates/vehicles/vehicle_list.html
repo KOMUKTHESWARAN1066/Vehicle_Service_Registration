@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle List</title>
+</head>
+
+<body>
+    <h1>Vehicle List</h1>
+    <ul>
+        {% for vehicle in vehicles %}
+        <li>{{ vehicle.name }} - <a href="{% url 'vehicles:vehicle_detail' vehicle.id %}">Details</a> - <a
+                href="{% url 'vehicles:vehicle_update' vehicle.id %}">Edit</a> - <a
+                href="{% url 'vehicles:vehicle_delete' vehicle.id %}">Delete</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'vehicles:vehicle_create' %}">Add New Vehicle</a>
+</body>
+
+</html>
