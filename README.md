@@ -80,5 +80,6 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.# Vehicle_Service_Registration
+This project is licensed under the @ Ela Solutions License. See the LICENSE file for details.# Vehicle_Service_Registration
+
 # Vehicle_Service_Registration
